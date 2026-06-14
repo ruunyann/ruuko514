@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>@ruuko514</title>
+<link rel="icon" href="https://raw.githubusercontent.com/ruunyann/nyannlctts/main/icon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
@@ -13,8 +14,14 @@ body {
   background: #fff;
   font-family: 'DotGothic16', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
   color: #111;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
@@ -38,8 +45,49 @@ header h1 {
   font-weight: 400;
   letter-spacing: 3px;
   color: rgba(0,0,0,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
 }
-.controls { display: flex; gap: 6px; align-items: center; }
+header h1:hover { color: rgba(0,0,0,0.7); }
+.x-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.x-link:hover { opacity: 0.75; }
+.x-icon {
+  width: 15px;
+  height: 15px;
+  fill: #111;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.dots {
+  font-size: 13px;
+  color: rgba(0,0,0,0.22);
+  letter-spacing: 2px;
+  cursor: default;
+  user-select: none;
+}
+.controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.header-left:hover .controls {
+  opacity: 1;
+  pointer-events: auto;
+}
 .controls button {
   font-size: 11px;
   padding: 4px 13px;
@@ -51,7 +99,7 @@ header h1 {
   letter-spacing: 1px;
   transition: all 0.2s;
 }
-.controls button:hover { color: #fff; border-color: rgba(0,0,0,0.35); }
+.controls button:hover { color: rgba(0,0,0,0.7); border-color: rgba(0,0,0,0.35); }
 .controls button.active {
   background: rgba(0,0,0,0.06);
   color: rgba(200,160,255,0.9);
@@ -64,15 +112,17 @@ header h1 {
 }
 
 /* JS masonry container — position:relative, items are absolute */
+#grid-wrap {
+  position: relative;
+}
 #grid {
   position: relative;
-  padding: 0 24px;
   margin-bottom: 80px;
 }
 
 .cell {
   position: absolute;
-  width: 240px;          /* set by JS too */
+  width: 270px;          /* set by JS too */
   cursor: pointer;
   background: #e8e8e8;
   border-radius: 10px;
@@ -107,17 +157,17 @@ header h1 {
 @keyframes softAnimeGlow {
   0%, 100% {
     box-shadow:
-      0 0 14px 3px rgba(255,255,255,0.6),
-      0 0 32px 10px rgba(255,255,255,0.3),
-      inset 0 0 18px rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.8);
+      0 0 12px 3px rgba(255,255,255,0.45),
+      0 0 28px 8px rgba(255,255,255,0.2),
+      inset 0 0 14px rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
   }
   50% {
     box-shadow:
-      0 0 18px 5px rgba(255,255,255,0.75),
-      0 0 38px 13px rgba(255,255,255,0.35),
-      inset 0 0 18px rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.9);
+      0 0 16px 5px rgba(255,255,255,0.55),
+      0 0 36px 12px rgba(255,255,255,0.25),
+      inset 0 0 16px rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.75);
   }
 }
 .cell .info {
@@ -141,17 +191,26 @@ header h1 {
 <body>
 
 <header>
-  <div style="display: flex; align-items: center; gap: 12px;">
-    <h1>@ruuko514</h1>
+  <div class="header-left">
+    <a href="https://x.com/ruuko514" target="_blank" class="x-link" title="@ruuko514 on X">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="x-icon">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.257 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="https://x.com/ruuko514" target="_blank" style="text-decoration:none;"><h1>@ruuko514</h1></a>
+    <span class="dots">・・・</span>
     <div class="controls">
+      <a href="https://lit.link/ruuko514" target="_blank" title="lit.link/ruuko514" style="display:flex;align-items:center;opacity:0.5;transition:opacity 0.2s;text-decoration:none;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'"><img src="https://lit.link/favicon.ico" style="width:15px;height:15px;object-fit:contain;" /></a>
       <button id="btn-new" class="active" onclick="sort('new')">新しい順</button>
       <button id="btn-old" onclick="sort('old')">古い順</button>
     </div>
   </div>
-  <span id="count"></span>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <span id="count"></span>
+  </div>
 </header>
 
-<div id="grid"></div>
+<div id="grid-wrap"><div id="grid"></div></div>
 
 <script>
 function parseJpDate(str) {
@@ -186,11 +245,72 @@ const items = [
   { url: "https://pbs.twimg.com/media/HFbVmDXbEAAExeC.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/2042054766763897165", date: "2026年4月9日" },
   { url: "https://pbs.twimg.com/media/HFbVp0ea8AElwiu.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/2042054766763897165", date: "2026年4月9日" },
   { url: "https://pbs.twimg.com/media/HFYonHXa8AMEXvI.jpg", tweet: "https://x.com/ruuko514/status/2041864233831559172", date: "2026年4月8日" },
-  { url: "https://pbs.twimg.com/media/HENCnZhbQAEw-Y6.jpg", tweet: "https://x.com/ruuko514/status/1848710910229217568", date: "2026年3月24日" },
-  { url: "https://pbs.twimg.com/media/HELLokAbwAA7fyC.jpg", tweet: "https://x.com/ruuko514/status/1848710910229217568", date: "2026年3月24日" },
+  { url: "https://pbs.twimg.com/media/HElyBq-akAAmcZJ.jpg", tweet: "https://x.com/ruuko514/status/2038285704741163430", date: "2026年3月29日" },
+  { url: "https://pbs.twimg.com/media/HENCnZhbQAEw-Y6.jpg", tweet: "https://x.com/ruuko514/status/2036544967523574067", date: "2026年3月24日" },
+  { url: "https://pbs.twimg.com/media/HELLokAbwAA7fyC.jpg", tweet: "https://x.com/ruuko514/status/2036414214534037761", date: "2026年3月24日" },
+  { url: "https://pbs.twimg.com/media/HEKKdh1bsAALkvp.jpg", tweet: "https://x.com/ruuko514/status/2036342645254140196", date: "2026年3月24日" },
+  { url: "https://pbs.twimg.com/media/HEKKd-XaIAM-sG6.jpg", tweet: "https://x.com/ruuko514/status/2036342645254140196", date: "2026年3月24日" },
+  { url: "https://pbs.twimg.com/media/HEFjQAGa8AAZO8e.jpg", tweet: "https://x.com/ruuko514/status/2036017889485177129", date: "2026年3月23日" },
+  { url: "https://pbs.twimg.com/media/HEBukjRboAA0kFN.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/2035749603950420009", date: "2026年3月22日" },
+  { url: "https://pbs.twimg.com/media/HEBuzBvaAAAUgT9.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/2035749603950420009", date: "2026年3月22日" },
+  { url: "https://pbs.twimg.com/media/HEBYiA9bwAAZzTt.jpg", tweet: "https://x.com/ruuko514/status/2035724472284778700", date: "2026年3月22日" },
+  { url: "https://pbs.twimg.com/media/HEA1fn9aIAE6nvs.jpg", tweet: "https://x.com/ruuko514/status/2035686124103028833", date: "2026年3月22日" },
   { url: "https://pbs.twimg.com/media/HD8DCLubYAA8jXg.jpg", tweet: "https://x.com/ruuko514/status/1848710910229217568", date: "2026年3月21日" },
+  { url: "https://pbs.twimg.com/media/HCKYUNwaUAAoUmT.jpg", tweet: "https://x.com/ruuko514/status/2027350360134951037", date: "2026年2月27日" },
+  { url: "https://pbs.twimg.com/media/HCFXFxObUAAxrz2.jpg", tweet: "https://x.com/ruuko514/status/2026997313105961055", date: "2026年2月26日" },
+  { url: "https://pbs.twimg.com/media/HCAcrlTbkAE0BFP.jpg", tweet: "https://x.com/ruuko514/status/2026651468204573139", date: "2026年2月25日" },
+  { url: "https://pbs.twimg.com/media/HB16xcwaQAAFoc7.jpg", tweet: "https://x.com/ruuko514/status/2025910472726528150", date: "2026年2月23日" },
+  { url: "https://pbs.twimg.com/media/HBXGDSIbgAA4Hvd.jpg", tweet: "https://x.com/ruuko514/status/2023743595157876997", date: "2026年2月17日" },
+  { url: "https://pbs.twimg.com/media/HBWnNS9bcAAliQY.jpg", tweet: "https://x.com/ruuko514/status/2023707598718169252", date: "2026年2月17日" },
+  { url: "https://pbs.twimg.com/media/HBMmOxya8AAm52B.jpg", tweet: "https://x.com/ruuko514/status/2023002721595666944", date: "2026年2月15日" },
+  { url: "https://pbs.twimg.com/media/HBHJqPbakAQHvuA.jpg", tweet: "https://x.com/ruuko514/status/2022619445227868279", date: "2026年2月14日" },
+  { url: "https://pbs.twimg.com/media/HA9skfkacAAWopW.jpg", tweet: "https://x.com/ruuko514/status/2021954425863241862", date: "2026年2月12日" },
+  { url: "https://pbs.twimg.com/media/HA25MMyaAAEI4bf.jpg", tweet: "https://x.com/ruuko514/status/2021475567825191064", date: "2026年2月11日" },
+  { url: "https://pbs.twimg.com/media/G_678xMboAAFeo9.jpg", tweet: "https://x.com/ruuko514/status/2017256440378089910", date: "2026年1月30日" },
+  { url: "https://pbs.twimg.com/media/G_ycTCKX0AADks1.jpg", tweet: "https://x.com/ruuko514/status/2016658638769967159", date: "2026年1月28日" },
+  { url: "https://pbs.twimg.com/media/G_qv6P6WsAEDn7b.jpg", tweet: "https://x.com/ruuko514/status/2016117217365316027", date: "2026年1月27日" },
+  { url: "https://pbs.twimg.com/media/G_kmDEYXkAAKn8I.jpg", tweet: "https://x.com/ruuko514/status/2015684403297730846", date: "2026年1月26日" },
+  { url: "https://pbs.twimg.com/media/G_jE5tQWIAA-DM7.jpg", tweet: "https://x.com/ruuko514/status/2015577396423036975", date: "2026年1月26日" },
   { url: "https://pbs.twimg.com/media/G9hkg2uaMAE9Th3.jpg", tweet: "https://x.com/ruuko514/status/2006464262802387234", date: "2025年12月31日" },
+  { url: "https://pbs.twimg.com/media/G9eH3IcaoAEIiLd.jpg", tweet: "https://x.com/ruuko514/status/2006221600279200254", date: "2025年12月31日" },
   { url: "https://pbs.twimg.com/media/G9a-YjbaYAIXPsA.jpg", tweet: "https://x.com/ruuko514/status/2006000062137262089", date: "2025年12月30日" },
+  { url: "https://pbs.twimg.com/media/G9YnUDBaYAAXqqA.jpg", tweet: "https://x.com/ruuko514/status/2005833933959622862", date: "2025年12月30日" },
+  { url: "https://pbs.twimg.com/media/G9QJ7MBaQAAPsqw.jpg", tweet: "https://x.com/ruuko514/status/2005239119463817337", date: "2025年12月28日" },
+  { url: "https://pbs.twimg.com/media/G9O0M7AbgAIBAi8.jpg", tweet: "https://x.com/ruuko514/status/2005144699787768273", date: "2025年12月28日" },
+  { url: "https://pbs.twimg.com/media/G9Mq67gawAAGtPc.jpg", tweet: "https://x.com/ruuko514/status/2004993507896033684", date: "2025年12月27日" },
+  { url: "https://pbs.twimg.com/media/G9JqGivbgAEdne1.jpg", tweet: "https://x.com/ruuko514/status/2004781525372690479", date: "2025年12月27日" },
+  { url: "https://pbs.twimg.com/media/G9FGOKcb0AEPYR0.png", tweet: "https://x.com/ruuko514/status/2004462403854258578", date: "2025年12月26日" },
+  { url: "https://pbs.twimg.com/media/G9EJucLb0AQUVQ8.jpg", tweet: "https://x.com/ruuko514/status/2004394227221029050", date: "2025年12月26日" },
+  { url: "https://pbs.twimg.com/media/G8tBGkLagAE7tlv.jpg", tweet: "https://x.com/ruuko514/status/2002766151022186991", date: "2025年12月21日" },
+  { url: "https://pbs.twimg.com/media/G8XBB60bcAA4M6b.jpg", tweet: "https://x.com/ruuko514/status/2001217902909759777", date: "2025年12月17日" },
+  { url: "https://pbs.twimg.com/media/G8IUmf0acAAzD0G.jpg", tweet: "https://x.com/ruuko514/status/2000183859993096312", date: "2025年12月14日" },
+  { url: "https://pbs.twimg.com/media/G8DQ3d8bMAIsHOH.jpg", tweet: "https://x.com/ruuko514/status/1999827916453298580", date: "2025年12月13日" },
+  { url: "https://pbs.twimg.com/media/G797t_tagAcuTw3.jpg", tweet: "https://x.com/ruuko514/status/1999452868877910089", date: "2025年12月12日" },
+  { url: "https://pbs.twimg.com/media/G75OBPwaUAAtpzR.jpg", tweet: "https://x.com/ruuko514/status/1999121144641904887", date: "2025年12月11日" },
+  { url: "https://pbs.twimg.com/media/G739G80bIAAMd7a.jpg", tweet: "https://x.com/ruuko514/status/1999032188113924265", date: "2025年12月11日" },
+  { url: "https://pbs.twimg.com/media/G7yo1atbcAADuh5.jpg", tweet: "https://x.com/ruuko514/status/1998659819050512730", date: "2025年12月10日" },
+  { url: "https://pbs.twimg.com/media/G7uuKD1bIAA895T.jpg", tweet: "https://x.com/ruuko514/status/1998382724462321735", date: "2025年12月9日" },
+  { url: "https://pbs.twimg.com/media/G7sI1JuaYAApmQo.jpg", tweet: "https://x.com/ruuko514/status/1998200647481790707", date: "2025年12月9日" },
+  { url: "https://pbs.twimg.com/media/G7o1_ubbYAAZFzJ.jpg", tweet: "https://x.com/ruuko514/status/1997968835862052928", date: "2025年12月8日" },
+  { url: "https://pbs.twimg.com/media/G7jx_zXbcAE15tO.jpg", tweet: "https://x.com/ruuko514/status/1997613950477963685", date: "2025年12月7日" },
+  { url: "https://pbs.twimg.com/media/G7BUuNSbYAA4dTm.png", tweet: "https://x.com/ruuko514/status/1995188370549674162", date: "2025年11月30日" },
+  { url: "https://pbs.twimg.com/media/G6v2rMtboAATS6J.jpg", tweet: "https://x.com/ruuko514/status/1993958584854667294", date: "2025年11月27日" },
+  { url: "https://pbs.twimg.com/media/G6mQ7JDbwAcJxuB.jpg", tweet: "https://x.com/ruuko514/status/1993283750927777962", date: "2025年11月25日" },
+  { url: "https://pbs.twimg.com/media/G6hoOJEaUAAhnx8.jpg", tweet: "https://x.com/ruuko514/status/1992957593669841046", date: "2025年11月24日" },
+  { url: "https://pbs.twimg.com/media/G6W0IWRbcAAnN2z.jpg", tweet: "https://x.com/ruuko514/status/1992196891677966736", date: "2025年11月22日" },
+  { url: "https://pbs.twimg.com/media/G6VYsW6bgAAjbKK.jpg", tweet: "https://x.com/ruuko514/status/1992096052787462300", date: "2025年11月22日" },
+  { url: "https://pbs.twimg.com/media/G6RExYNaYAAhF33.jpg", tweet: "https://x.com/ruuko514/status/1991792673741763013", date: "2025年11月21日" },
+  { url: "https://pbs.twimg.com/media/G6Hr81OaQAAkN3f.jpg", tweet: "https://x.com/ruuko514/status/1991132080189919584", date: "2025年11月19日" },
+  { url: "https://pbs.twimg.com/media/G6CfaDDbMAM5CL8.jpg", tweet: "https://x.com/ruuko514/status/1990766439876473121", date: "2025年11月18日" },
+  { url: "https://pbs.twimg.com/media/G531UrVasAE_tlN.jpg", tweet: "https://x.com/ruuko514/status/1990016725044412582", date: "2025年11月16日" },
+  { url: "https://pbs.twimg.com/media/G5rOpeQacAM5iVr.jpg", tweet: "https://x.com/ruuko514/status/1989129442753700327", date: "2025年11月14日" },
+  { url: "https://pbs.twimg.com/media/G5eg3G5aYAAK8lE.jpg", tweet: "https://x.com/ruuko514/status/1988234768115482688", date: "2025年11月11日" },
+  { url: "https://pbs.twimg.com/media/G5UxaGCbwAAHkqc.jpg", tweet: "https://x.com/ruuko514/status/1987549713768550432", date: "2025年11月9日" },
+  { url: "https://pbs.twimg.com/media/G5UXcnUbYAAEbMQ.jpg", tweet: "https://x.com/ruuko514/status/1987520701260349938", date: "2025年11月9日" },
+  { url: "https://pbs.twimg.com/media/G5LsTT_bIAUxV0p.jpg", tweet: "https://x.com/ruuko514/status/1986911851029090583", date: "2025年11月7日" },
+  { url: "https://pbs.twimg.com/media/G4v_u1QbEAEBOgV.jpg", tweet: "https://x.com/ruuko514/status/1984961577624498459", date: "2025年11月2日" },
+  { url: "https://pbs.twimg.com/media/G2tQ96PbAAAzJke.jpg", tweet: "https://x.com/ruuko514/status/1975763727892029501", date: "2025年10月8日" },
+  { url: "https://pbs.twimg.com/media/G2k0A86XkAAr4A1.jpg", tweet: "https://x.com/ruuko514/status/1975167352359526794", date: "2025年10月6日" },
   { url: "https://pbs.twimg.com/media/G8_Lj1HaQAA-h4j.jpg", tweet: "https://x.com/ruuko514/status/2004044244407960004", date: "2025年12月25日" },
   { url: "https://pbs.twimg.com/media/G88bFHYbUAAiY2Z.jpg", tweet: "https://x.com/ruuko514/status/2003850725525491773", date: "2025年12月24日" },
   { url: "https://pbs.twimg.com/media/G82k3XIagAYVPTm.jpg", tweet: "https://x.com/ruuko514/status/2003850725525491773", date: "2025年12月23日" },
@@ -199,6 +319,142 @@ const items = [
   { url: "https://pbs.twimg.com/media/G46cPwKXwAABy9G.jpg", tweet: "https://x.com/ruuko514/status/1940013460194304317", date: "2025年11月4日" },
   { url: "https://pbs.twimg.com/media/G2p9KPwbQAABh1w.jpg", tweet: "https://x.com/ruuko514/status/1940013460194304317", date: "2025年10月7日" },
   { url: "https://pbs.twimg.com/media/GuxPUQaXMAAoCUm.jpg", tweet: "https://x.com/ruuko514/status/1940013460194304317", date: "2025年7月1日" },
+  { url: "https://pbs.twimg.com/media/Gu0kxZeXIAAB0EO.jpg", tweet: "https://x.com/ruuko514/status/1940247521168957848", date: "2025年7月2日" },
+  { url: "https://pbs.twimg.com/media/GvEEYRQaAAcpBay.jpg", tweet: "https://x.com/ruuko514/status/1941337888056320379", date: "2025年7月5日" },
+  { url: "https://pbs.twimg.com/media/GvGeRYFXYAAtAgC.jpg", tweet: "https://x.com/ruuko514/status/1941507157163376914", date: "2025年7月5日" },
+  { url: "https://pbs.twimg.com/media/GvK9MinWMAAxt5r.jpg", tweet: "https://x.com/ruuko514/status/1941822850148762013", date: "2025年7月6日" },
+  { url: "https://pbs.twimg.com/media/GvQLdkUbkAE9zFN.jpg", tweet: "https://x.com/ruuko514/status/1942190118368170180", date: "2025年7月7日" },
+  { url: "https://pbs.twimg.com/media/GvXUvRFa4AA5Olf.jpg", tweet: "https://x.com/ruuko514/status/1942693059613057082", date: "2025年7月8日" },
+  { url: "https://pbs.twimg.com/media/GvVQyHxXkAAWRQv.jpg", tweet: "https://x.com/ruuko514/status/1942547915681222838", date: "2025年7月8日" },
+  { url: "https://pbs.twimg.com/media/Gvcr7isXUAAXNgA.jpg", tweet: "https://x.com/ruuko514/status/1943070290352988606", date: "2025年7月9日" },
+  { url: "https://pbs.twimg.com/media/Gvk3CBAbUAAtieB.jpg", tweet: "https://x.com/ruuko514/status/1943645317305704456", date: "2025年7月11日" },
+  { url: "https://pbs.twimg.com/media/GvqGqVkWQAA0oo9.jpg", tweet: "https://x.com/ruuko514/status/1944014721071689763", date: "2025年7月12日" },
+  { url: "https://pbs.twimg.com/media/GvxCBvfXYAA8fxY.jpg", tweet: "https://x.com/ruuko514/status/1944501880434102329", date: "2025年7月13日" },
+  { url: "https://pbs.twimg.com/media/Gv572AKXYAMBDgl.jpg", tweet: "https://x.com/ruuko514/status/1945128618038059363", date: "2025年7月15日" },
+  { url: "https://pbs.twimg.com/media/GwAUR9DWUAANWmi.jpg", tweet: "https://x.com/ruuko514/status/1945577500857569635", date: "2025年7月16日" },
+  { url: "https://pbs.twimg.com/media/GwCys1OXcAAllKG.jpg", tweet: "https://x.com/ruuko514/status/1945751786553536680", date: "2025年7月17日" },
+  { url: "https://pbs.twimg.com/media/GwHxk2hW8AE_GwH.jpg", tweet: "https://x.com/ruuko514/status/1946102739999810001", date: "2025年7月18日" },
+  { url: "https://pbs.twimg.com/media/GwNpn18XoAA0GhA.jpg", tweet: "https://x.com/ruuko514/status/1946515652992540971", date: "2025年7月19日" },
+  { url: "https://pbs.twimg.com/media/GwXPA97aIAATScs.jpg", tweet: "https://x.com/ruuko514/status/1947190189694373912", date: "2025年7月21日" },
+  { url: "https://pbs.twimg.com/media/GwXPPYVW4AAMDWc.jpg", tweet: "https://x.com/ruuko514/status/1947190445131616389", date: "2025年7月21日" },
+  { url: "https://pbs.twimg.com/media/GwXPdiPaYAAICxF.jpg", tweet: "https://x.com/ruuko514/status/1947190635347480638", date: "2025年7月21日" },
+  { url: "https://pbs.twimg.com/media/GwXsoSVXQAAayOf.jpg", tweet: "https://x.com/ruuko514/status/1947222950194901325", date: "2025年7月21日" },
+  { url: "https://pbs.twimg.com/media/Gwclvc8bEAIV0BO.jpg", tweet: "https://x.com/ruuko514/status/1947570772857524609", date: "2025年7月22日" },
+  { url: "https://pbs.twimg.com/media/GwdfeEJbEAI9JLu.jpg", tweet: "https://x.com/ruuko514/status/1947630865766306203", date: "2025年7月22日" },
+  { url: "https://pbs.twimg.com/media/GwgyJ9TbEAEy-so.jpg", tweet: "https://x.com/ruuko514/status/1947862063809974464", date: "2025年7月23日" },
+  { url: "https://pbs.twimg.com/media/GwiRgQfbEAAd8uR.jpg", tweet: "https://x.com/ruuko514/status/1947966918243275232", date: "2025年7月23日" },
+  { url: "https://pbs.twimg.com/media/GwsEdkibgAA7vHw.jpg", tweet: "https://x.com/ruuko514/status/1948656413498339565", date: "2025年7月25日" },
+  { url: "https://pbs.twimg.com/media/GxB0Y8xaoAAiuZo.jpg", tweet: "https://x.com/ruuko514/status/1950186875097895229", date: "2025年7月29日" },
+  { url: "https://pbs.twimg.com/media/Gxq1pCeawAI-NTv.jpg", tweet: "https://x.com/ruuko514/status/1953073395878482057", date: "2025年8月6日" },
+  { url: "https://pbs.twimg.com/media/GxucpyfawAE0KOk.jpg", tweet: "https://x.com/ruuko514/status/1953327198469013718", date: "2025年8月7日" },
+  { url: "https://pbs.twimg.com/media/GxyrrFzbsAQeIZl.jpg", tweet: "https://x.com/ruuko514/status/1953625143395164338", date: "2025年8月8日" },
+  { url: "https://pbs.twimg.com/media/Gx5raShbgAAFKTv.jpg", tweet: "https://x.com/ruuko514/status/1954117441174294951", date: "2025年8月9日" },
+  { url: "https://pbs.twimg.com/media/GyJ3mrMWEAATylo.jpg", tweet: "https://x.com/ruuko514/status/1955256976121663799", date: "2025年8月12日" },
+  { url: "https://pbs.twimg.com/media/GyV_gXaW8AADYru.jpg", tweet: "https://x.com/ruuko514/status/1956109818680500232", date: "2025年8月14日" },
+  { url: "https://pbs.twimg.com/media/Gyj1RA8boAA2IZa.jpg", tweet: "https://x.com/ruuko514/status/1957083793728458777", date: "2025年8月17日" },
+  { url: "https://pbs.twimg.com/media/GytoM31XkAA5U1M.jpg", tweet: "https://x.com/ruuko514/status/1957773041242456110", date: "2025年8月19日" },
+  { url: "https://pbs.twimg.com/media/Gyy8TmUa8AACgZE.jpg", tweet: "https://x.com/ruuko514/status/1958147092796580065", date: "2025年8月20日" },
+  { url: "https://pbs.twimg.com/media/Gy3n4U3WkAAG2PN.jpg", tweet: "https://x.com/ruuko514/status/1958476437062558183", date: "2025年8月21日" },
+  { url: "https://pbs.twimg.com/media/Gz1otVka0AADoJO.jpg", tweet: "https://x.com/ruuko514/status/1962842062711292003", date: "2025年9月2日" },
+  { url: "https://pbs.twimg.com/media/G0hBqvAaMAMXUio.jpg", tweet: "https://x.com/ruuko514/status/1965896393060663502", date: "2025年9月10日" },
+  { url: "https://pbs.twimg.com/media/G0uXE7YbcAQ1MLF.jpg", tweet: "https://x.com/ruuko514/status/1966831853534670967", date: "2025年9月13日" },
+  { url: "https://pbs.twimg.com/media/G02KNSlawAEUkqs.jpg", tweet: "https://x.com/ruuko514/status/1967380720948842742", date: "2025年9月15日" },
+  { url: "https://pbs.twimg.com/media/G03uVOAbQAAeNGb.jpg", tweet: "https://x.com/ruuko514/status/1967491322820038810", date: "2025年9月15日" },
+  { url: "https://pbs.twimg.com/media/G04OqM2a0AAq0b6.jpg", tweet: "https://x.com/ruuko514/status/1967526813070237795", date: "2025年9月15日" },
+  { url: "https://pbs.twimg.com/media/G04PUVKagAAHRkz.jpg", tweet: "https://x.com/ruuko514/status/1967526984646545469", date: "2025年9月15日" },
+  { url: "https://pbs.twimg.com/media/G09vPBYa8AEbojH.jpg", tweet: "https://x.com/ruuko514/status/1967917105866764439", date: "2025年9月16日" },
+  { url: "https://pbs.twimg.com/media/G1BjOIubAAAxnpG.jpg", tweet: "https://x.com/ruuko514/status/1968182323658269119", date: "2025年9月17日" },
+  { url: "https://pbs.twimg.com/media/G1FmfwoaQAMhSqV.jpg", tweet: "https://x.com/ruuko514/status/1968467404675235862", date: "2025年9月18日" },
+  { url: "https://pbs.twimg.com/media/G1IhsCEbIAAi_Du.jpg", tweet: "https://x.com/ruuko514/status/1968673167997546774", date: "2025年9月18日" },
+  { url: "https://pbs.twimg.com/media/G1MmvakbQAAlWDA.jpg", tweet: "https://x.com/ruuko514/status/1968960627537306088", date: "2025年9月19日" },
+  { url: "https://pbs.twimg.com/media/G1QkT9DbQAElO9i.jpg", tweet: "https://x.com/ruuko514/status/1969240075939541321", date: "2025年9月20日" },
+  { url: "https://pbs.twimg.com/media/G1YLEFjbkAAIeEE.jpg", tweet: "https://x.com/ruuko514/status/1969774159250288649", date: "2025年9月21日" },
+  { url: "https://pbs.twimg.com/media/G1YtN17b0AA9d-w.jpg", tweet: "https://x.com/ruuko514/status/1969811864612909302", date: "2025年9月21日" },
+  { url: "https://pbs.twimg.com/media/G1h1sCdWEAAFYPn.jpg", tweet: "https://x.com/ruuko514/status/1970455623256191056", date: "2025年9月23日" },
+  { url: "https://pbs.twimg.com/media/G1icjttXoAA8UqQ.jpg", tweet: "https://x.com/ruuko514/status/1970497415112495238", date: "2025年9月23日" },
+  { url: "https://pbs.twimg.com/media/G1m-zvrXYAAjh-c.jpg", tweet: "https://x.com/ruuko514/status/1970816229582786586", date: "2025年9月24日" },
+  { url: "https://pbs.twimg.com/media/G1sFyn1W8AABjqN.jpg", tweet: "https://x.com/ruuko514/status/1971175665660772356", date: "2025年9月25日" },
+  { url: "https://pbs.twimg.com/media/G1xFwOoXwAAALF2.jpg", tweet: "https://x.com/ruuko514/status/1971527458773213636", date: "2025年9月26日" },
+  { url: "https://pbs.twimg.com/media/G12WyiOXoAAAH6C.jpg", tweet: "https://x.com/ruuko514/status/1971898514847457548", date: "2025年9月27日" },
+  { url: "https://pbs.twimg.com/media/G1707QmXEAADSw8.jpg", tweet: "https://x.com/ruuko514/status/1972283118418796832", date: "2025年9月28日" },
+  { url: "https://pbs.twimg.com/media/G2GccZTaEAAcN9x.jpg", tweet: "https://x.com/ruuko514/status/1973030249836474759", date: "2025年9月30日" },
+  { url: "https://pbs.twimg.com/media/G2QTb3_WAAEjyqg.jpg", tweet: "https://x.com/ruuko514/status/1973724047512064253", date: "2025年10月2日" },
+  { url: "https://pbs.twimg.com/media/G2y1wD8asAAoX81.jpg", tweet: "https://x.com/ruuko514/status/1976154199110062574", date: "2025年10月9日" },
+  { url: "https://pbs.twimg.com/media/G20IDMGXoAECLGt.jpg", tweet: "https://x.com/ruuko514/status/1976244785498439784", date: "2025年10月9日" },
+  { url: "https://pbs.twimg.com/media/G25XTGGbgAAlmV0.jpg", tweet: "https://x.com/ruuko514/status/1976613296213303297", date: "2025年10月10日" },
+  { url: "https://pbs.twimg.com/media/G29iyLZXcAAX7CT.png", tweet: "https://x.com/ruuko514/status/1976907527565783280", date: "2025年10月11日" },
+  { url: "https://pbs.twimg.com/media/G2-fuZSXwAA2u7y.jpg", tweet: "https://x.com/ruuko514/status/1976974517412212950", date: "2025年10月11日" },
+  { url: "https://pbs.twimg.com/media/G3Dl-baawAA-FG8.jpg", tweet: "https://x.com/ruuko514/status/1977333181469855809", date: "2025年10月12日" },
+  { url: "https://pbs.twimg.com/media/G3OTJBUWgAASATy.jpg", tweet: "https://x.com/ruuko514/status/1978086954919985391", date: "2025年10月14日" },
+  { url: "https://pbs.twimg.com/media/G3YJFHwacAAh5TY.jpg", tweet: "https://x.com/ruuko514/status/1978779155517886578", date: "2025年10月16日" },
+  { url: "https://pbs.twimg.com/media/G3i3UyFXsAAvJ0e.jpg", tweet: "https://x.com/ruuko514/status/1979533788482031739", date: "2025年10月18日" },
+  { url: "https://pbs.twimg.com/media/G3qM62hXkAA57EF.jpg", tweet: "https://x.com/ruuko514/status/1980050095157674117", date: "2025年10月19日" },
+  { url: "https://pbs.twimg.com/media/G3yM6zKWoAAXATB.jpg", tweet: "https://x.com/ruuko514/status/1980613059556282455", date: "2025年10月21日" },
+  { url: "https://pbs.twimg.com/media/G4GeeiYWwAAiQ-u.jpg", tweet: "https://x.com/ruuko514/status/1982039621534896467", date: "2025年10月25日" },
+  { url: "https://pbs.twimg.com/media/G4LoGlpWUAAh8_7.jpg", tweet: "https://x.com/ruuko514/status/1982402018397524412", date: "2025年10月26日" },
+  { url: "https://pbs.twimg.com/media/G4Qr1a2XgAAYIIO.jpg", tweet: "https://x.com/ruuko514/status/1982758061686378651", date: "2025年10月27日" },
+  { url: "https://pbs.twimg.com/media/G4WE82VasAEP_UD.jpg", tweet: "https://x.com/ruuko514/status/1983137517273788572", date: "2025年10月28日" },
+  { url: "https://pbs.twimg.com/media/G4WnjoybsAATrIl.jpg", tweet: "https://x.com/ruuko514/status/1983175732433175011", date: "2025年10月28日" },
+  { url: "https://pbs.twimg.com/media/G4bLeGJXQAEpabU.jpg", tweet: "https://x.com/ruuko514/status/1983496600908333228", date: "2025年10月29日" },
+  { url: "https://pbs.twimg.com/media/G4keEEQa8AQR_4g.jpg", tweet: "https://x.com/ruuko514/status/1984150334575665443", date: "2025年10月31日" },
+  { url: "https://pbs.twimg.com/media/Gur6GTEbIAAYW26.jpg", tweet: "https://x.com/ruuko514/status/1939637629039108454", date: "2025年6月30日" },
+  { url: "https://pbs.twimg.com/media/Gt-hM3cWIAEHCRS.jpg", tweet: "https://x.com/ruuko514/status/1936443654295716168", date: "2025年6月21日" },
+  { url: "https://pbs.twimg.com/media/GtpMdeebgAAH_zz.jpg", tweet: "https://x.com/ruuko514/status/1934943081994010867", date: "2025年6月17日" },
+  { url: "https://pbs.twimg.com/media/Gtfewk9bIAAfuNh.jpg", tweet: "https://x.com/ruuko514/status/1934259597478596757", date: "2025年6月15日" },
+  { url: "https://pbs.twimg.com/media/GtaAW1obIAA425n.jpg", tweet: "https://x.com/ruuko514/status/1933874370801512850", date: "2025年6月14日" },
+  { url: "https://pbs.twimg.com/media/GtGEVsca4AAmDN2.jpg", tweet: "https://x.com/ruuko514/status/1932471349387403611", date: "2025年6月10日" },
+  { url: "https://pbs.twimg.com/media/Gs6lxmtaYAEXzYm.jpg", tweet: "https://x.com/ruuko514/status/1931663716376084795", date: "2025年6月8日" },
+  { url: "https://pbs.twimg.com/media/GswqK65boAAu73U.jpg", tweet: "https://x.com/ruuko514/status/1930964974362571073", date: "2025年6月6日" },
+  { url: "https://pbs.twimg.com/media/GstTE1XbUAAVCC_.jpg", tweet: "https://x.com/ruuko514/status/1930728299220873267", date: "2025年6月5日" },
+  { url: "https://pbs.twimg.com/media/GsrOpSbbkAAGr0n.jpg", tweet: "https://x.com/ruuko514/status/1930582807753199701", date: "2025年6月5日" },
+  { url: "https://pbs.twimg.com/media/GslSs1uasAIPGTX.jpg", tweet: "https://x.com/ruuko514/status/1930165061055852590", date: "2025年6月4日" },
+  { url: "https://pbs.twimg.com/media/GsoNn-7asAQ2e1R.jpg", tweet: "https://x.com/ruuko514/status/1930372259816058932", date: "2025年6月4日" },
+  { url: "https://pbs.twimg.com/media/GsfqsswagAAbPb4.jpg", tweet: "https://x.com/ruuko514/status/1929769607679955303", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/Gsfqtt7aIAAV1JD.jpg", tweet: "https://x.com/ruuko514/status/1929769607679955303", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/Gsfqv2rb0AAoBlF.jpg", tweet: "https://x.com/ruuko514/status/1929769607679955303", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/Gsfqw33b0AUeISv.jpg", tweet: "https://x.com/ruuko514/status/1929769607679955303", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/GsfrxNJbwAARgbK.jpg", tweet: "https://x.com/ruuko514/status/1929770575699886243", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/GshQ3nqb0AECkWj.jpg", tweet: "https://x.com/ruuko514/status/1929881509642526848", date: "2025年6月3日" },
+  { url: "https://pbs.twimg.com/media/GsSRjSBaMAQl1_v.jpg", tweet: "https://x.com/ruuko514/status/1928827190747029514", date: "2025年5月31日" },
+  { url: "https://pbs.twimg.com/media/GsRpdxFaMAIWIiU.jpg", tweet: "https://x.com/ruuko514/status/1928782597959856372", date: "2025年5月31日" },
+  { url: "https://pbs.twimg.com/media/GsGZcFUaUAIlVox.jpg", tweet: "https://x.com/ruuko514/status/1927991043623956509", date: "2025年5月29日" },
+  { url: "https://pbs.twimg.com/media/Gry5VVeW4AAWNIc.jpg", tweet: "https://x.com/ruuko514/status/1926618702029443466", date: "2025年5月25日" },
+  { url: "https://pbs.twimg.com/media/Grvnmk4XUAAUY9_.jpg", tweet: "https://x.com/ruuko514/status/1926388508513513613", date: "2025年5月24日" },
+  { url: "https://pbs.twimg.com/media/GrsyFPiXUAArV2s.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/1926188901049274403", date: "2025年5月24日" },
+  { url: "https://pbs.twimg.com/media/Gro4isKXAAAi20A.jpg", tweet: "https://x.com/ruuko514/status/1925914185935769760", date: "2025年5月23日" },
+  { url: "https://pbs.twimg.com/media/GreegcIa8AAW3gN.jpg", tweet: "https://x.com/ruuko514/status/1925181772368851308", date: "2025年5月21日" },
+  { url: "https://pbs.twimg.com/media/GrZMOtkbAAM8JYP.jpg", tweet: "https://x.com/ruuko514/status/1924809764493787203", date: "2025年5月20日" },
+  { url: "https://pbs.twimg.com/media/GrUQ2H7aIAAf1r8.jpg", tweet: "https://x.com/ruuko514/status/1924462972300398969", date: "2025年5月19日" },
+  { url: "https://pbs.twimg.com/media/GnMlMjYaIAAoUef.jpg", tweet: "https://x.com/ruuko514/status/1905908058594881688", date: "2025年3月29日" },
+  { url: "https://pbs.twimg.com/media/Gm45XLWbUAAwZmd.jpg", tweet: "https://x.com/ruuko514/status/1904522918727717270", date: "2025年3月25日" },
+  { url: "https://pbs.twimg.com/media/GmUu7fTaIAAc2ij.jpg", tweet: "https://x.com/ruuko514/status/1901978098473873763", date: "2025年3月18日" },
+  { url: "https://pbs.twimg.com/media/GmR7QOgbgAATheo.jpg", tweet: "https://x.com/ruuko514/status/1901780707963498817", date: "2025年3月17日" },
+  { url: "https://pbs.twimg.com/media/GmPu69GaQAAE3y-.jpg", tweet: "https://x.com/ruuko514/status/1901626388849066176", date: "2025年3月17日" },
+  { url: "https://pbs.twimg.com/media/GlmdGAEbEAApq95.jpg", tweet: "https://x.com/ruuko514/status/1898722182228009002", date: "2025年3月9日" },
+  { url: "https://pbs.twimg.com/media/GlhdOkVawAAnbbO.jpg", tweet: "https://x.com/ruuko514/status/1898371706936594814", date: "2025年3月8日" },
+  { url: "https://pbs.twimg.com/media/GlefbcHbwAIX0fB.jpg", tweet: "https://x.com/ruuko514/status/1898161158840017332", date: "2025年3月7日" },
+  { url: "https://pbs.twimg.com/media/GlUQTHdaIAEXxBz.jpg", tweet: "https://x.com/ruuko514/status/1897440845126938957", date: "2025年3月6日" },
+  { url: "https://pbs.twimg.com/media/GlNHEcsawAAQZvP.jpg", tweet: "https://x.com/ruuko514/status/1896938155565281475", date: "2025年3月4日" },
+  { url: "https://pbs.twimg.com/media/Gk51NydXAAAyFqW.jpg", tweet: "https://x.com/ruuko514/status/1895581563603309018", date: "2025年2月28日" },
+  { url: "https://pbs.twimg.com/media/Gk5LLbIbwAAY81q.jpg", hidden: true, tweet: "https://x.com/ruuko514/status/1895535483494789276", date: "2025年2月28日" },
+  { url: "https://pbs.twimg.com/media/Gk4EGS_akAAu-UC.jpg", tweet: "https://x.com/ruuko514/status/1895458137081327734", date: "2025年2月28日" },
+  { url: "https://pbs.twimg.com/media/GkzWYxJaoAIX5jR.jpg", tweet: "https://x.com/ruuko514/status/1895125276797084122", date: "2025年2月27日" },
+  { url: "https://pbs.twimg.com/media/GktWvMZbQAA6U-k.jpg", tweet: "https://x.com/ruuko514/status/1894703622107361770", date: "2025年2月26日" },
+  { url: "https://pbs.twimg.com/media/GktWvk6aoAARXwP.jpg", tweet: "https://x.com/ruuko514/status/1894703622107361770", date: "2025年2月26日" },
+  { url: "https://pbs.twimg.com/media/GkGrZktaAAEH0-E.jpg", tweet: "https://x.com/ruuko514/status/1891982155565121729", date: "2025年2月18日" },
+  { url: "https://pbs.twimg.com/media/GjlLKKibYAANuQ0.jpg", tweet: "https://x.com/ruuko514/status/1889624856116842631", date: "2025年2月12日" },
+  { url: "https://pbs.twimg.com/media/GjgZZXWakAAhykL.jpg", tweet: "https://x.com/ruuko514/status/1889288131415089633", date: "2025年2月11日" },
+  { url: "https://pbs.twimg.com/media/GjV4dAsbAAAODh9.jpg", tweet: "https://x.com/ruuko514/status/1888548133267030291", date: "2025年2月9日" },
+  { url: "https://pbs.twimg.com/media/GjJGHzjbIAAmQaq.jpg", tweet: "https://x.com/ruuko514/status/1887648500453941603", date: "2025年2月6日" },
+  { url: "https://pbs.twimg.com/media/Gh0jvKDbwAA6mk_.jpg", tweet: "https://x.com/ruuko514/status/1881699607782260754", date: "2025年1月21日" },
+  { url: "https://pbs.twimg.com/media/Ghc4aU5acAQ84bB.jpg", tweet: "https://x.com/ruuko514/status/1880033856075837906", date: "2025年1月16日" },
+  { url: "https://pbs.twimg.com/media/GgsNyA3awAAS-aj.jpg", tweet: "https://x.com/ruuko514/status/1876609090539126872", date: "2025年1月7日" },
+  { url: "https://pbs.twimg.com/media/GFFp-xcbYAAOqx5.jpg", tweet: "https://x.com/ruuko514/status/1752318242700267747", date: "2024年1月30日" },
+  { url: "https://pbs.twimg.com/media/GEj47FxaoAA44Se.jpg", tweet: "https://x.com/ruuko514/status/1749922374454292658", date: "2024年1月23日" },
+  { url: "https://pbs.twimg.com/media/GD-Fs8FbcAAa_LN.jpg", tweet: "https://x.com/ruuko514/status/1747262330604515686", date: "2024年1月16日" },
+  { url: "https://pbs.twimg.com/media/GDZqf_IaIAAZwZn.jpg", tweet: "https://x.com/ruuko514/status/1744705588402270433", date: "2024年1月9日" },
+  { url: "https://pbs.twimg.com/media/GDO1uvYbQAAeKbU.jpg", tweet: "https://x.com/ruuko514/status/1743937351334944774", date: "2024年1月7日" },
+  { url: "https://pbs.twimg.com/media/GDAx5TxbkAAZXgC.jpg", tweet: "https://x.com/ruuko514/status/1742948065932411217", date: "2024年1月4日" },
   { url: "https://pbs.twimg.com/media/GgIKGoWbYAMfTYC.jpg", tweet: "https://x.com/ruuko514/status/1874074982189588958", date: "2024年12月31日" },
   { url: "https://pbs.twimg.com/media/GfB8m0gbIAA3UKp.jpg", tweet: "https://x.com/ruuko514/status/1869130939386994723", date: "2024年12月17日" },
   { url: "https://pbs.twimg.com/media/Ged96DuasAAZzog.jpg", tweet: "https://x.com/ruuko514/status/1866599188575949271", date: "2024年12月10日" },
@@ -266,7 +522,7 @@ const items = [
 items.forEach(item => { item.ts = parseJpDate(item.date); });
 
 const GAP = 4;
-const COL_W = 240;
+const COL_W = 270;
 let mode = 'new';
 let pendingLayout = false;
 
@@ -282,7 +538,7 @@ function sort(m) {
 }
 
 function getColCount() {
-  const gridW = document.getElementById('grid').clientWidth - 48; // minus padding
+  const gridW = document.getElementById('grid').clientWidth - 80;
   return Math.max(1, Math.floor((gridW + GAP) / (COL_W + GAP)));
 }
 
@@ -291,9 +547,12 @@ function getColCount() {
 function layoutCells(cells) {
   const cols = getColCount();
   const colHeights = new Array(cols).fill(0);
-  const gridW = document.getElementById('grid').clientWidth - 48;
+  const gridW = document.getElementById('grid').clientWidth - 80;
   const totalGap = GAP * (cols - 1);
   const colW = Math.floor((gridW - totalGap) / cols);
+  // Center the column block within the full grid width
+  const blockW = colW * cols + GAP * (cols - 1);
+  const offsetX = Math.floor((document.getElementById('grid').clientWidth - blockW) / 2);
 
   cells.forEach((cell) => {
     const imgEl = cell.querySelector('img');
@@ -315,7 +574,7 @@ function layoutCells(cells) {
     }
 
     const cellW = span === 2 ? colW * 2 + GAP : colW;
-    const x = col * (colW + GAP);
+    const x = offsetX + col * (colW + GAP);
     const y = span === 2
       ? Math.max(colHeights[col], colHeights[col + 1])
       : colHeights[col];
@@ -359,7 +618,7 @@ function render() {
 
     const info = document.createElement('div');
     info.className = 'info';
-    info.innerHTML = '<span class="date">' + item.date + '</span>';
+    info.innerHTML = '';
 
     cell.appendChild(img);
     cell.appendChild(info);
@@ -370,7 +629,7 @@ function render() {
       const px = (e.clientX - rect.left) / rect.width;
       const py = (e.clientY - rect.top) / rect.height;
       cell.style.transform =
-        'perspective(700px) rotateX(' + ((0.5 - py) * 16).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 16).toFixed(2) + 'deg) scale(1.04) translateY(-3px)';
+        'perspective(700px) rotateX(' + ((0.5 - py) * 16).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 16).toFixed(2) + 'deg) scale(1.07) translateY(-3px)';
       cell.style.boxShadow = '0 14px 28px rgba(0,0,0,0.18)';
     });
     cell.addEventListener('mouseleave', () => {
@@ -409,6 +668,48 @@ window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => render(), 120);
 });
+
+// Block context menu
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Heart burst on right-click and left-click
+document.addEventListener('mousedown', e => {
+  if (e.button !== 2 && e.button !== 0) return;
+  spawnHearts(e.clientX, e.clientY);
+});
+
+function spawnHearts(x, y) {
+  const count = 8 + Math.floor(Math.random() * 5);
+  const colors = ['#ff6eb4','#ff9fd6','#ffb3e0','#ff4da6','#c96fff','#ff85c8','#ffcce8','#e066ff'];
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('div');
+    const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.6;
+    const dist = 60 + Math.random() * 80;
+    const size = 14 + Math.random() * 14;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const dur = 600 + Math.random() * 400;
+    el.textContent = '♡';
+    Object.assign(el.style, {
+      position: 'fixed',
+      left: x + 'px',
+      top: y + 'px',
+      fontSize: size + 'px',
+      color: color,
+      pointerEvents: 'none',
+      zIndex: 9999,
+      transform: 'translate(-50%,-50%)',
+      textShadow: '0 0 6px ' + color,
+      transition: `transform ${dur}ms cubic-bezier(0.2,1,0.4,1), opacity ${dur}ms ease`,
+      opacity: '1',
+    });
+    document.body.appendChild(el);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.style.transform = `translate(calc(-50% + ${Math.cos(angle)*dist}px), calc(-50% + ${Math.sin(angle)*dist}px)) scale(0.3)`;
+      el.style.opacity = '0';
+    }));
+    setTimeout(() => el.remove(), dur + 50);
+  }
+}
 </script>
 </body>
 </html>
