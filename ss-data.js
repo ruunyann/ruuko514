@@ -1,14 +1,4 @@
 // ============================================================
-// ss-data.js — All SS screenshots (edit this file only, no need to touch index.html)
-//
-// Add new image: add a line like this above the first one
-//   { id: "image-filename.jpg", tw: "tweet-id", d: "YYYY-M-D" },
-//
-// How to get id  : from image url e.g. .../media/HF8uFQ1bMAAxsDp.jpg -> id is HF8uFQ1bMAAxsDp.jpg
-// How to get tw  : from tweet url e.g. .../status/2044037985327534299 -> tw is 2044037985327534299
-// d              : use "YYYY-M-D" e.g. "2026-4-14" (year only or year-month also works)
-// hidden: true   : add this to hide an image temporarily (not deleted)
-// Delete image   : remove the entire line
 // ============================================================
 // @encoded
 window.SS_DATA = [
