@@ -202,16 +202,23 @@ footer {
 #kawaii-4644 {
   position: fixed; inset: 0; z-index: 1000;
   background: rgba(80,40,110,0.55);
-  display: none; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.22s ease;
 }
-#kawaii-4644.open { display: flex; }
+#kawaii-4644.open { opacity: 1; pointer-events: auto; }
 #nyann-2576 {
   width: min(440px, 90vw);
   max-height: 84vh; overflow-y: auto;
   background: #fdf0f8;
   border: 4px solid #c9a8ff;
   box-shadow: 6px 6px 0 #b888dd, 6px 6px 0 3px #f0d8ff;
+  transform: scale(0.94) translateY(6px);
+  transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+}
+#kawaii-4644.open #nyann-2576 {
+  transform: scale(1) translateY(0);
 }
 .ww-4523 {
   background: linear-gradient(90deg, #c9a8ff 0%, #ffb3d6 100%);
@@ -766,9 +773,14 @@ document.addEventListener('mousemove', e => {
 
 document.addEventListener('click', e => {
   if (_didDrag) return;
+  const pageOverlay = document.getElementById('kawaii-3108');
+  if (pageOverlay && pageOverlay.classList.contains('open')) return;
+  
   const overlay = document.getElementById('kawaii-4644');
+  if (e.target === overlay) return;
+  
   if (!overlay.classList.contains('open')) {
-    if (!e.target.closest('#wl-overlay') && !e.target.closest('#wl-frame-overlay')) {
+    if (!e.target.closest('#kawaii-4644') && !e.target.closest('#ruuko-3976')) {
       wlOpenModal();
     }
   }
