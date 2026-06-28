@@ -1,16 +1,5 @@
 // ============================================================
-// gallery-data.js — Gallery Auto-Scroll Masonry images
-// Edit this file only — no need to touch index.html
-//
-// Add new image: add a line like this above the first one
-//   { id: "HK9t4t4aUAASxaE", tw: "2066991707456151736", d: "2026-6-16" },
-//
-// How to get id  : from image url e.g. .../media/HK9t4t4aUAASxaE.jpg -> id is HK9t4t4aUAASxaE
-// How to get tw  : from tweet url e.g. .../status/2066991707456151736 -> tw is 2066991707456151736
-//                  if no specific tweet, leave tw: "" (will link to profile page)
-// d              : use "YYYY-M-D" e.g. "2026-6-16" (year only or year-month also works)
-// hidden: true   : add this to hide an image temporarily (not deleted)
-// Delete image   : remove the entire line
+
 // ============================================================
 // @encoded
 window.GALLERY_DATA = [
