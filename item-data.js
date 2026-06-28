@@ -1,21 +1,4 @@
 // ============================================================
-// item-data.js — PSO2 NGS Fashion Items
-// Edit this file only — no need to touch index.html
-//
-// Add new entry: copy a block below and paste above the first one, then edit
-//
-//   {
-//     title:      "Outfit name",
-//     date:       "YYYY-MM-DD",
-//     cat:        "ac or co",
-//     id:         "Twitter image id (part after /media/)",
-//     tweetId:    "Tweet id (from sega_pso2)",
-//     fashionUrl: "Link to pso2.jp page",
-//   },
-//
-// cat            : 'ac' = general fashion, 'co' = collab
-// acCollab: true : add this (one line) if it's a collab sold as AC Scratch too
-// Delete entry   : remove the entire { ... } block
 // ============================================================
 
 // @encoded
