@@ -1,7 +1,3 @@
-// ============================================================
-// ============================================================
-
-// @encoded
 window.ITEM_DATA = [
   {
     title:      "チェイストリーブライダル'26",
@@ -439,5 +435,508 @@ window.ITEM_DATA = [
     id:         "Zn8aQ-1oWII9YSf",
     tweetId:    "GA4kAK4k4kAQE-QQKKk",
     fashionUrl: "https://pso2.jp/players/fashionitems/20250108/",
+  },
+
+  {
+    title:      "ニューイヤーズチャーム'24",
+    date:       "2024-12-25",
+    cat:        "ac",
+    id:         "Z0ds_LfoWIIhjMq",
+    tweetId:    "GA4G4EuKuEQG4kAKKGK",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241225/",
+  },
+
+  {
+    title:      "ウィンターキャンパスファッション",
+    date:       "2024-12-18",
+    cat:        "ac",
+    id:         "Z0TW9pYoWIIXkYz",
+    tweetId:    "GAkmK-G-4KK44KEK-Qk",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241218/",
+  },
+
+  {
+    title:      "メルティブラッドスタイル'24",
+    date:       "2024-12-04",
+    cat:        "co",
+    acCollab:   true,
+    id:         "Z346oVSoQIIIx6M",
+    tweetId:    "GAkuGuu-EKkkQQAKmAA",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241204/",
+  },
+
+  {
+    title:      "ジョイフルホリデーズ'24",
+    date:       "2024-11-27",
+    cat:        "ac",
+    id:         "Z3bMToCo2Iv4fk-",
+    tweetId:    "GAkGkQ4-AkmGGEmKuEm",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241127/",
+  },
+
+  {
+    title:      "フレームアームズスタイル'24",
+    date:       "2024-10-30",
+    cat:        "co",
+    acCollab:   true,
+    id:         "ZxZGRxaoaIIoyJx",
+    tweetId:    "GAEGukQEKkE-k-u-Ekm",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241030/",
+  },
+
+  {
+    title:      "モンスターマスカレード'24",
+    date:       "2024-10-16",
+    cat:        "ac",
+    id:         "ZBD88cMxQIIYs75",
+    tweetId:    "GAuk-A4EmmKAGu-EQ-u",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241016/",
+  },
+
+  {
+    title:      "チアフルスポーツカーニバル",
+    date:       "2024-10-09",
+    cat:        "ac",
+    id:         "ZBogWvpxIII02mf",
+    tweetId:    "GAu-AEQk-GQGkKk-4Au",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241009/",
+  },
+
+  {
+    title:      "スタイリッシュオータム",
+    date:       "2024-09-25",
+    cat:        "ac",
+    id:         "ZWVYEM2o_IPaRzT",
+    tweetId:    "GA-A44kmEQQAKk4QkK-",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240925/",
+  },
+
+  {
+    title:      "シャドウブレードナイツ",
+    date:       "2024-09-11",
+    cat:        "ac",
+    id:         "Zby02jyoWII1ppP",
+    tweetId:    "GA--4Q-EKG4QmQAAmKG",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240911/",
+  },
+
+  {
+    title:      "コズミックストライクフォース",
+    date:       "2024-08-28",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "GAKAk-QQmQu4QAEQA-E",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240828/",
+  },
+
+  {
+    title:      "シャングリラ・フロンティアスタイル",
+    date:       "2024-08-21",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "GAKkQmuG-mKuu4QAQkE",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240821/",
+  },
+
+  {
+    title:      "サマーアスリート",
+    date:       "2024-08-07",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "GAKGQKQGmA--GuGK4mQ",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240807/",
+  },
+
+  {
+    title:      "ハルファサマースプラッシュ",
+    date:       "2024-07-31",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "GAGAuA-mA4GukEAAKGu",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240731/",
+  },
+
+  {
+    title:      "陰の実力者スタイル",
+    date:       "2024-07-17",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "GAG-QuEmQuE4-m-GkAE",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240717/",
+  },
+
+  {
+    title:      "サマースカイシーサイド'24",
+    date:       "2024-07-03",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "GAQA--kA4uEAQuk-mAG",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240703/",
+  },
+
+  {
+    title:      "コードギアススタイル",
+    date:       "2024-06-19",
+    cat:        "co",
+    acCollab:   true,
+    id:         "ZXBkltlofIIERaK",
+    tweetId:    "GAQ-Kk-kmEKQG4GAu--",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240619/",
+  },
+
+  {
+    title:      "スタイリッシュアベニュー",
+    date:       "2024-06-12",
+    cat:        "ac",
+    id:         "ZqG-cEjxIIIKMR-",
+    tweetId:    "GAQQ4Kku4ukQ4KGu4G4",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240612/",
+  },
+
+  {
+    title:      "ブライダルファンタジア",
+    date:       "2024-06-05",
+    cat:        "ac",
+    id:         "ZqLQTdooIIIyHqF",
+    tweetId:    "G4mAGAm4EA-GmGKAAku",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240605/",
+  },
+
+  {
+    title:      "エレガントハーモニー",
+    date:       "2024-05-29",
+    cat:        "ac",
+    id:         "Zsz14wooaIIqHNC",
+    tweetId:    "G4mEkE-QukkQkmG4Aum",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240529/",
+  },
+
+  {
+    title:      "「アトリエ」スタイル",
+    date:       "2024-05-15",
+    cat:        "co",
+    acCollab:   true,
+    id:         "ZOY55h2ouIIxKOz",
+    tweetId:    "G4mQE4mkGEm-Q4umuGK",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240515/",
+  },
+
+  {
+    title:      "アーバンサイバネティクス",
+    date:       "2024-05-08",
+    cat:        "ac",
+    id:         "ZO9dRj3o2II17Bx",
+    tweetId:    "G4AAQuKAmAAA4kEGkK-",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240508/",
+  },
+
+  {
+    title:      "るろうに剣心スタイル",
+    date:       "2024-04-03",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "G44-GAummEA44mG4QkE",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240403/",
+  },
+
+  {
+    title:      "エコーズオブイドラ",
+    date:       "2024-03-20",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "G44QKAEAm-KAuu4m-kE",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240320/",
+  },
+
+  {
+    title:      "ダウニードリーム",
+    date:       "2024-03-06",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "G4kEKGKukKuGGQ4G4um",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240306/",
+  },
+
+  {
+    title:      "スターライトファッション",
+    date:       "2024-02-07",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "G4EEQkE-EKE4EuAQK--",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240207/",
+  },
+
+  {
+    title:      "モディッシュウィンター'24",
+    date:       "2024-01-10",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "G4uumGA4uuAEKE4QE-G",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240110/",
+  },
+
+  {
+    title:      "エコーズオブイドラ2",
+    date:       "2024-11-13",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20241113/",
+  },
+
+  {
+    title:      "怪獣８号スタイル",
+    date:       "2024-09-18",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240918/",
+  },
+
+  {
+    title:      "ノーブルシャドウズ",
+    date:       "2024-04-24",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240424/",
+  },
+
+  {
+    title:      "ビンテージクラシックス",
+    date:       "2024-04-10",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240410/",
+  },
+
+  {
+    title:      "イースターフェスティバル",
+    date:       "2024-03-27",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240327/",
+  },
+
+  {
+    title:      "バジリスクビューティー",
+    date:       "2024-02-21",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240221/",
+  },
+
+  {
+    title:      "バーチャルライバースタイル'24",
+    date:       "2024-02-14",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240214/",
+  },
+
+  {
+    title:      "ストリートスマート",
+    date:       "2024-01-31",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240131/",
+  },
+
+  {
+    title:      "『七つの大罪』スタイル",
+    date:       "2024-01-17",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20240117/",
+  },
+
+  {
+    title:      "ニューイヤーズチャーム",
+    date:       "2023-12-27",
+    cat:        "ac",
+    id:         "ZMagwb0onII9bU9",
+    tweetId:    "G4-mAuEAGAAQm44uQAA",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231227/",
+  },
+
+  {
+    title:      "ブラックラグーンスタイル",
+    date:       "2023-12-20",
+    cat:        "co",
+    acCollab:   true,
+    id:         "Z91jv3PonII9866",
+    tweetId:    "G4-4-QAAEKu-k-KuuQm",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231220/",
+  },
+
+  {
+    title:      "ジョイフルホリデーズ",
+    date:       "2023-12-06",
+    cat:        "ac",
+    id:         "ZI2R4Kix_IIZ2-2",
+    tweetId:    "G4-KK-EuKQ-EumuGQ44",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231206/",
+  },
+
+  {
+    title:      "フレームアームズスタイル",
+    date:       "2023-11-22",
+    cat:        "co",
+    acCollab:   true,
+    id:         "6hUo9FCogIIgDRb",
+    tweetId:    "G4K4KKmu-uE4-E--KQk",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231122/",
+  },
+
+  {
+    title:      "エレメンタルディフェンダー",
+    date:       "2023-11-08",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "G4KKQAAEkQkKGu--G-u",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231108/",
+  },
+
+  {
+    title:      "ムーンライトサンクチュアリー'23",
+    date:       "2023-09-06",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "Gkm4GQ4GmAmE-QEuuuk",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230906/",
+  },
+
+  {
+    title:      "モンスターマスカレード'23",
+    date:       "2023-10-25",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231025/",
+  },
+
+  {
+    title:      "スプリガンスタイル",
+    date:       "2023-10-18",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231018/",
+  },
+
+  {
+    title:      "ストリートビート",
+    date:       "2023-10-11",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20231011/",
+  },
+
+  {
+    title:      "サイバーコンフォート",
+    date:       "2023-09-20",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230920/",
+  },
+
+  {
+    title:      "【推しの子】スタイル",
+    date:       "2023-09-13",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230913/",
+  },
+
+  {
+    title:      "スタイリッシュサマー",
+    date:       "2023-08-23",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230823/",
+  },
+
+  {
+    title:      "異世界おじさんスタイル",
+    date:       "2023-08-09",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230809/",
+  },
+
+  {
+    title:      "デザイナードリームズAug'23",
+    date:       "2023-08-02",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230802/",
+  },
+
+  {
+    title:      "エキゾチックサマーナイト",
+    date:       "2023-07-19",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230719/",
+  },
+
+  {
+    title:      "デザイナードリームズJul'23",
+    date:       "2023-07-05",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230705/",
+  },
+
+  {
+    title:      "攻殻機動隊 SAC_2045スタイル",
+    date:       "2023-06-28",
+    cat:        "co",
+    acCollab:   true,
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230628/",
+  },
+
+  {
+    title:      "スピリチュアルコンフリクト",
+    date:       "2023-06-21",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230621/",
+  },
+
+  {
+    title:      "デザイナードリームズJun'23",
+    date:       "2023-06-07",
+    cat:        "ac",
+    id:         "",
+    tweetId:    "",
+    fashionUrl: "https://pso2.jp/players/fashionitems/20230607/",
   },
 ];
