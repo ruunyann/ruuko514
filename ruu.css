@@ -352,6 +352,7 @@ footer {
 
 body[data-page="ss"] .ww-6451 { display: none !important; }
 body[data-page="ngsfi"] .ww-6451 { display: none !important; }
+body[data-page="gp"] .ww-6451 { display: none !important; }
 #ruuko-4483 { flex: 1; border: none; width: 100%; background: #fff; opacity: 0; transition: opacity 0.25s ease; }
 #ruuko-4483.loaded { opacity: 1; }
 #nyann-6847 {
